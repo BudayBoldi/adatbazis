@@ -27,7 +27,4 @@ class DBCon {
 		mysqli_close($this -> database_handle);
 	}
 }
-
-$DBCon = new DBCon();
-$DBCon -> GetTable($_POST['name']);
 ?>
