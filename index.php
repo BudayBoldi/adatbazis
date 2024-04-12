@@ -1,3 +1,8 @@
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	Neved: <input type="text" name="name">
+	<input type="submit" value="Ok">
+</form>
+
 <?php
 class DBCon {
 	private $server = "localhost";
@@ -10,8 +15,12 @@ class DBCon {
 		$this -> database_handle = new mysqli($this -> server, $this -> user, $this -> password, $this -> database);
 	}
 
-	public function GetTable() {
-		$result = mysqli_query($this -> database_handle, "SELECT * FROM tabla WHERE ID=1;");
+	public function GetTable($nq) {
+		$result = mysqli_query($this -> database_handle, "SELECT * FROM tabla WHERE NAME='$nq';");
+
+		if (!mysqli_num_rows($result)) {
+			echo "Biztos hogy helyesen irtad be?";
+		}
 
 		while ($row = mysqli_fetch_assoc($result)) {
 			foreach ($row as $key => $val) {
@@ -24,6 +33,9 @@ class DBCon {
 	}
 }
 
-$DBCon = new DBCon();
-$DBCon -> GetTable();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = htmlspecialchars($_POST['name']);
+  $DBCon = new DBCon();
+  $DBCon -> GetTable($name);
+}
 ?>
