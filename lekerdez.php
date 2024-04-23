@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Lekerdezes</title>
+	<title>Lekerdez</title>
 	<style type="text/css">
 		body {
 			text-align: center;
