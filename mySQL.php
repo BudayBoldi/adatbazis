@@ -26,5 +26,14 @@ class DBCon {
 		mysqli_free_result($result);
 		mysqli_close($this -> database_handle);
 	}
+	public function WriteTable($nw, $adw, $aw) {
+		if(mysqli_query($this -> database_handle, "INSERT INTO tabla VALUES (null, '$nw', '$adw', '$aw');")) {
+			echo "Success!";
+		} else {
+			echo "Error: " . mysqli_error($this -> database_handle);
+		}
+
+		mysqli_close($this -> database_handle);
+	}
 }
 ?>
