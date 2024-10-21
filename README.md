@@ -4,7 +4,7 @@ Adatbáziskezelőprogram PHP-ban.
 ### Tartalom
 - mySQL.php: az SQL kapcsolathoz Libary.
 - lekerdez.php: lekérdezi a adatot.
-- beilleszt.php: adatot lehet vele beküldeni.
+- beilleszt.php: adatot lehet vele szerkeszteni.
 - index.php: főoldal
 
  ### Közreműködők
