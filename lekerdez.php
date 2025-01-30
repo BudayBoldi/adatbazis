@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Lekerdez</title>
+	<title>Lekerdezes</title>
 	<style type="text/css">
 		body {
 			text-align: center;
@@ -8,24 +8,27 @@
 			background: wheat
 		}
 		#txt {
-			font-size: large;
+			font-size: xx-large;
 			border: 0;
 			border-bottom: 2px solid #333;
 			background: transparent;
 			outline: none
 		}
 		#sub {
-			font-size: large;
+			font-size: xx-large;
 			border: 0;
 			border-bottom: 2px solid #333;
 			background: transparent
+		}
+		res {
+			font-weight: bold;
 		}
 	</style>
 </head>
 <body>
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-	<h3>Neved: <input type="text" ID="txt" name="name">
-	<input type="submit" ID="sub" value="Ok"></h3>
+	<input type="text" ID="txt" name="name" placeholder="Neved">
+	<input type="submit" ID="sub" value="Ok">
 </form>
 
 <?php
