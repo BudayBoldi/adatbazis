@@ -4,7 +4,7 @@ class DBCon {
 	private $user = "root";
 	private $password = "";
 	private $database = "test";
-	public $database_handle;
+	private $database_handle = null;
 
 	public function __construct() {
 		$this -> database_handle = new mysqli($this -> server, $this -> user, $this -> password, $this -> database);
@@ -17,6 +17,7 @@ class DBCon {
 			echo "<res>Biztos hogy helyesen irtad be?</res>";
 		}
 
+		// TODO: $response = json_encode(mysqli_fetch_assoc($result));
 		while ($row = mysqli_fetch_assoc($result)) {
 			foreach ($row as $key => $val) {
 				echo "<res>$key = $val</res> <br>";
